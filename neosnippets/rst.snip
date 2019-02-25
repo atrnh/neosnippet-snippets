@@ -1,76 +1,38 @@
-snippet quickstart
+snippet nest_incremental
+options indent
+  .. container:: nest-incremental
+  
+    ${1:#:content}
+
+snippet newslide
+abbr ns
 options head
-  ===========================
-  ${1:#:content_name}
-  ===========================
+  .. newslide::
 
-  .. contents:: contents_name
+  ${0:#:CURSOR}
 
-  title1
-  ====================================
+snippet testcode
+options indent
+  .. testcode::
 
-  subtitle1
-  -----------------------------------
+    ${1:#:code}
 
-  subtitle2
-  -----------------------------------
+snippet testoutput
+options indent
+  .. testoutput::
 
-  subtitle3
-  -----------------------------------
-
-  title2
-  ====================================
-
-  subtitle1
-  -----------------------------------
-
-  subtitle2
-  -----------------------------------
-
-  subtitle3
-  -----------------------------------
-
-  title3
-  ====================================
-
-  subtitle1
-  -----------------------------------
-
-  subtitle2
-  -----------------------------------
-
-  subtitle3
-  -----------------------------------
-
-
-snippet contnents
-options head
-  .. contents:: ${1:#:contents_name}
-
-snippet title
-options head
-  ${1:#:title}
-  ====================================
-
-snippet subtitle
-options head
-  ${1:#:subtitle}
-  -----------------------------------
+    ${1:#:code}
 
 snippet code_block
 abbr code
-options head
+options indent
   .. code-block:: ${1:#:filetype}
 
 		${2:#:content}
 
-snippet link_raw
-abbr link_as_raw
-options head
-  \`${1:#:link}\`_
 
-snippet link_label
-abbr link_and_label
+snippet link
+abbr link
 options head
   \`${1:#:title} <${2:#:link}>\`_
 
@@ -135,15 +97,6 @@ abbr        link_to_doc
 options     head
 	:doc:\`${1:#:PageName}\` ${0:#:CURSOR}
 
-
-snippet     syntax
-abbr        syntax
-options     indent
-	.. code-block:: ${1:python}
-
-		${1:#:TERGET}
-
-
 snippet     label
 abbr        label
 options     head
@@ -199,6 +152,8 @@ snippet     note
 abbr        note
 	.. note:: ${0:#:CURSOR}
 
+    ${1:#:content}
+
 
 snippet     tip
 abbr        tip
@@ -242,3 +197,9 @@ abbr        important
 snippet     seealso
 abbr        seealso
 	.. seealso:: ${0:#:CURSOR}
+
+snippet only
+  .. only:: not revealjs
+    
+    ${0:#:CURSOR}
+
